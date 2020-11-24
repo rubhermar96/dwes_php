@@ -10,10 +10,10 @@
 <body>
     <nav>
         <div class="inicio">
-            <a href="index.html"><span><i class="material-icons">home</i>Inicio</span></a>
+            <a href="index.php"><span><i class="material-icons">home</i>Inicio</span></a>
         </div>
         <div class="administrador">
-            <a class="btnAdmin">Administrador</a>
+            <a class="btnAdmin" href="acceso/login.php">Administrador</a>
         </div>
     </nav>
     <main>
@@ -44,8 +44,9 @@
             </div>
         </div>
         <div class="acceso">
-            <div class="btnAcceso"><a href="acceso/loginClientes.php">Acceso Clientes</a></div>
+            <div class="btnAcceso"><a href="acceso/login.php">Acceso Clientes</a></div>
         </div>
+        <div class="parallax"></div>  
     </main>
     <footer>
         <p>Proyecto Desarrollo Web Entorno Servidor - Rubén Herrera Marcos</p>

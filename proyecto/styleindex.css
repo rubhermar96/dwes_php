@@ -31,6 +31,7 @@ nav{
 .inicio a:hover{
     color: rgb(255, 70, 24);
 }
+
 .administrador{
     position: absolute;
     right: 20px;
@@ -69,6 +70,12 @@ a{
     text-align: center;
     background-color: rgba(39, 39, 39, 0.651);
     color: whitesmoke;
+}
+@media only screen and (max-width:650px){
+    #titulo h1{
+        padding: 80px;
+        font-size: 40px;
+    }
 }
 
 /* Publicidad */
@@ -117,6 +124,16 @@ img{
 .btnAcceso a:hover{
     background-color: rgb(255, 70, 24);
 }
+/* parallax */
+.parallax{
+    clear: both;
+    background-image: url("img/imgParallax.jpg");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 /* Footer */
 
@@ -124,6 +141,7 @@ footer{
     background-color:  rgb(22, 22, 22);
     padding: 20px;
     text-align: center;
+    width: 100%;
 }
 footer p{
     font-size: 20px;
