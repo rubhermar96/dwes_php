@@ -29,17 +29,17 @@
   	  		<input type="email" name="email" value="<?php echo $email; ?>">
   		</div>
   		<div class="input-group">
-  	  		<label>Contraseña</label>
+  	  		<label>Password</label>
   	  		<input type="password" name="password_1">
   		</div>
   		<div class="input-group">
-  	  		<label>Confirmar Contraseña</label>
+  	  		<label>Confirmar Password</label>
   	  		<input type="password" name="password_2">
   		</div>
   		<div class="input-group">
   	  		<button type="submit" class="btn" name="reg_user">Registrar</button>
   		</div>
-  		<p>¿Ya eres Cliente? <a href="login.php">Inicia Sesión</a></p>
+  		<p>¿Ya eres Cliente? <a href="login.php">Inicia Sesion</a></p>
   	</form>
   	<footer>
         <p>Proyecto Desarrollo Web Entorno Servidor - Rubén Herrera Marcos</p>

@@ -15,7 +15,7 @@
     	</div>
 	</nav>
   	<div class="header">
-  		<h2>Iniciar Sesión</h2>
+  		<h2>Iniciar Sesion</h2>
   	</div>
   	<form method="post" action="login.php">
   		<?php include('errors.php'); ?>
@@ -24,13 +24,13 @@
   		<input type="text" name="username" >
   	</div>
   	<div class="input-group">
-  		<label>Contraseña</label>
+  		<label>Password</label>
   		<input type="password" name="password">
   	</div>
   	<div class="input-group">
   		<button type="submit" class="btn" name="login_user">Entrar</button>
   	</div>
-  	<p>¿No eres Cliente? <a href="register.php">Regístrate</a></p>
+  	<p>¿No eres Cliente? <a href="register.php">Registrate</a></p>
   	</form>
   	<footer>
         <p>Proyecto Desarrollo Web Entorno Servidor - Rubén Herrera Marcos</p>
