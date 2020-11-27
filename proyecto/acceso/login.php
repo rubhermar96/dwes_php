@@ -11,24 +11,24 @@
 <body>
 	<nav>
     	<div class="inicio">
-        	<a href="index.php"><span><i class="material-icons">home</i>Inicio</span></a>
+        	<a href="../index.php"><span><i class="material-icons">home</i>Inicio</span></a>
     	</div>
 	</nav>
   	<div class="header">
-  		<h2>Iniciar Sesion</h2>
+  		<h2>Inicio Sesion</h2>
   	</div>
   	<form method="post" action="login.php">
   		<?php include('errors.php'); ?>
   	<div class="input-group">
   		<label>Nombre Usuario</label>
-  		<input type="text" name="username" >
+  		<input type="text" name="username" required>
   	</div>
   	<div class="input-group">
   		<label>Password</label>
-  		<input type="password" name="password">
+  		<input type="password" name="password" required>
   	</div>
   	<div class="input-group">
-  		<button type="submit" class="btn" name="login_user">Entrar</button>
+  		<button type="submit" class="btn" name="login_user">Iniciar Sesión</button>
   	</div>
   	<p>¿No eres Cliente? <a href="register.php">Registrate</a></p>
   	</form>

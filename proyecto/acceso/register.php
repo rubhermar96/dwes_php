@@ -11,33 +11,45 @@
 <body>
 	<nav>
     	<div class="inicio">
-        	<a href="index.php"><span><i class="material-icons">home</i>Inicio</span></a>
+        	<a href="../index.php"><span><i class="material-icons">home</i>Inicio</span></a>
     	</div>
 	</nav>
   	<div class="header">
-  		<h2>Registrarse</h2>
+  		<h2>Registro</h2>
   	</div>
 	
   	<form method="post" action="register.php">
   		<?php include('errors.php'); ?>
   		<div class="input-group">
-  	  		<label>Nombre Usuario</label>
-  	  		<input type="text" name="username" value="<?php echo $username; ?>">
+  	  		<label>Usuario</label>
+  	  		<input type="text" name="usernameCliente" required>
+  		</div>
+		<div class="input-group">
+  	  		<label>Nombre</label>
+  	  		<input type="text" name="nombreCliente" required>
+  		</div>
+		  <div class="input-group">
+  	  		<label>Apellidos</label>
+  	  		<input type="text" name="apellidosCliente" required>
+  		</div>
+		<div class="input-group">
+  	  		<label>DNI</label>
+  	  		<input type="text" name="dniCliente" required>
   		</div>
   		<div class="input-group">
   	  		<label>Email</label>
-  	  		<input type="email" name="email" value="<?php echo $email; ?>">
+  	  		<input type="email" name="emailCliente" required>
   		</div>
   		<div class="input-group">
   	  		<label>Password</label>
-  	  		<input type="password" name="password_1">
+  	  		<input type="password" name="passwordCliente" required>
   		</div>
   		<div class="input-group">
-  	  		<label>Confirmar Password</label>
-  	  		<input type="password" name="password_2">
+  	  		<label>Telefono</label>
+  	  		<input type="tel" name="tlfnCliente" required>
   		</div>
   		<div class="input-group">
-  	  		<button type="submit" class="btn" name="reg_user">Registrar</button>
+  	  		<button type="submit" class="btn" name="reg_user">Registrarse</button>
   		</div>
   		<p>¿Ya eres Cliente? <a href="login.php">Inicia Sesion</a></p>
   	</form>
