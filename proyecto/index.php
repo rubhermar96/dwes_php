@@ -13,7 +13,7 @@
             <a href="index.php"><span><i class="material-icons">home</i>Inicio</span></a>
         </div>
         <div class="administrador">
-            <a class="btnAdmin" href="acceso/login.php">Administrador</a>
+            <a class="btnAdmin" href="admins/login.php">Administrador</a>
         </div>
     </nav>
     <main>
@@ -44,7 +44,7 @@
             </div>
         </div>
         <div class="acceso">
-            <div class="btnAcceso"><a href="acceso/login.php">Acceso Clientes</a></div>
+            <div class="btnAcceso"><a href="clientes/login.php">Acceso Clientes</a></div>
         </div>
         <div class="parallax"></div>  
     </main>
