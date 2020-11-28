@@ -48,6 +48,7 @@ CREATE TABLE IF NOT EXISTS `trabajador` (
   `nombre_trabajador` VARCHAR(45) NOT NULL,
   `usuario_trabajador` VARCHAR(45) NOT NULL,
   `pass_trabajador` VARCHAR(45) NOT NULL,
+  `apellidos_trabajador` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id_trabajador`),
   UNIQUE INDEX `id_trabajador_UNIQUE` (`id_trabajador` ASC) ,
   UNIQUE INDEX `usuario_trabajador_UNIQUE` (`usuario_trabajador` ASC) )
@@ -89,3 +90,7 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- INSERT ADMIN
+INSERT INTO `trabajador` (`nombre_trabajador`,`usuario_trabajador`,`pass_trabajador`,`apellidos_trabajador`)
+VALUES ('Administrador','admin','admin','Administrador');
