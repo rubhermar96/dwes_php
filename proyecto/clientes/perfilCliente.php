@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
   	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>Nueva Cita</title>
+    <title>Mis Citas</title>
 </head>
 <body>
     <nav>
@@ -22,7 +22,7 @@
       <button class="btn3"><a href="citasCliente.php" style="color: white; text-decoration: none;">Mis Citas</a></button>
     </div>
     <div class="titlePage">
-      <h2>Nueva Cita</h2>
+      <h2>Mi Perfil</h2>
     </div>
     <footer>
         <p>Proyecto Desarrollo Web Entorno Servidor - Rubén Herrera Marcos</p>

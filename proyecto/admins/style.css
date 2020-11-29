@@ -31,6 +31,59 @@
   .inicio a:hover{
     color: rgb(255, 70, 24);
   }
+  .perfil{
+    position: absolute;
+    right: 20px;
+    top: 15px;
+  }
+  .perfil .btnPerfil{
+    background-color: rgb(39, 39, 39);
+    border: solid 2px rgb(255, 70, 24);
+    border-radius: 5px;
+    color: rgb(255, 70, 24);
+    padding: 15px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .perfil .btnPerfil:hover{
+    background-color: rgb(255, 254, 254);
+  }
+  
+  a{
+    text-decoration: none;
+  }
+  /*Segundo Menu */
+.nav2{
+  width: 100%;
+  padding: 5px;
+  background-color: rgb(190, 190, 190);
+  border-bottom: 2px solid black;
+  text-align: center;
+
+}
+.btn2 {
+  padding: 15px;
+  font-size: 20px;
+  color: white;
+  background: rgb(34, 155, 70);
+  border: none;
+  border-radius: 5px;
+}
+.btn2:hover{
+  background-color: rgb(255, 173, 153);
+}
+.btn3 {
+  padding: 15px;
+  font-size: 20px;
+  color: white;
+  background: rgb(255, 70, 24);
+  border: none;
+  border-radius: 5px;
+}
+.btn3:hover{
+  background-color: rgb(255, 173, 153);
+}
+/*Login Register y pagina confirmación */
   .header {
     width: 30%;
     margin: 50px auto 0px;

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
   	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>Citas Peluqueria</title>
+    <title>Perfil Admin</title>
 </head>
 <body>
     <nav>
@@ -24,7 +24,7 @@
       <button class="btn3"><a href="adminServicios.php" style="color: white; text-decoration: none;">Servicios</a></button>
     </div>
     <div class="titlePage">
-      <h2>Citas Peluquería</h2>
+      <h2>Perfil Administrador</h2>
     </div>
     <footer>
         <p>Proyecto Desarrollo Web Entorno Servidor - Rubén Herrera Marcos</p>
