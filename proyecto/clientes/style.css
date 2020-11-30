@@ -147,6 +147,31 @@ a{
     border: 1px solid #3c763d;
     margin-bottom: 20px;
   }
+  /*Contenido Formularios*/
+.titlePage{
+  margin: 10px 15% 10px 15%;
+}
+.titlePage h2{
+  padding: 10px;
+  border: black solid 2px;
+  border-radius: 5px;
+}
+.formPerfil{
+  margin: 10px 0px;
+  padding: 10px;
+  border: black solid 2px;
+  border-radius: 5px;
+  width: 100%;
+}
+tr{
+border-radius: 5px;
+background-color: rgb(230, 246, 252);
+}
+td{
+  padding: 10px 10px 10px 10px;
+  font-size: 20px;
+  text-align: center;
+}
 
   /*footer*/
   footer{

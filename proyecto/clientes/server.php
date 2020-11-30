@@ -56,8 +56,14 @@ if (isset($_POST['login_user'])) {
         $password = md5($password);
         $query = "SELECT * FROM cliente WHERE usuario_cliente='$username' AND pass_cliente='$password'";
         $results = mysqli_query($db, $query);
+        $datos = mysqli_fetch_array($results);
         if (mysqli_num_rows($results) == 1) {
           $_SESSION['username'] = $username;
+          $_SESSION['nombreCliente'] = $datos[2];
+          $_SESSION['dniCliente'] = $datos[1];
+          $_SESSION['tlfnCliente'] = $datos[3];
+          $_SESSION['emailCliente'] = $datos[4];
+          $_SESSION['apellidosCliente'] = $datos[7];
           $_SESSION['success'] = "Sesion Iniciada Correctamente";
           header('location: index.php');
         }else {
