@@ -5,7 +5,7 @@ $username = "";
 $errors = array(); 
 
 // CONEXION BASE DE DATOS
-$db = mysqli_connect('localhost', 'ruben', 'toor', 'scruben');
+$db = mysqli_connect('localhost', 'rubens', 'toor', 'scruben');
 
 // REGISTRO TRABAJADORES
 if (isset($_POST['reg_user'])) {

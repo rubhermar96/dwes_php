@@ -84,6 +84,17 @@ a{
 .btn3:hover{
   background-color: rgb(255, 173, 153);
 }
+.btn4 {
+  padding: 15px;
+  font-size: 20px;
+  color: white;
+  background: red;
+  border: none;
+  border-radius: 5px;
+}
+.btn4:hover{
+  background-color: rgb(255, 173, 153);
+}
   /*Login Register y pagina confirmacion */
   .header {
     width: 30%;
@@ -171,6 +182,15 @@ td{
   padding: 10px 10px 10px 10px;
   font-size: 20px;
   text-align: center;
+  border-radius: 5px;
+}
+.formPerfil input{
+  border: none;
+  background-color: rgb(230, 246, 252);
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  color: black;
 }
 
   /*footer*/

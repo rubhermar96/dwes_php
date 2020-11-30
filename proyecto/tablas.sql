@@ -9,6 +9,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 
 -- Table `cliente`
 -- -----------------------------------------------------
+DROP TABLE `cliente`;
 CREATE TABLE IF NOT EXISTS `cliente` (
   `id_cliente` INT NOT NULL AUTO_INCREMENT,
   `dni_cliente` VARCHAR(9) NOT NULL,
@@ -29,6 +30,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`servicio`
 -- -----------------------------------------------------
+DROP TABLE `servicio`;
 CREATE TABLE IF NOT EXISTS `servicio` (
   `id_servicio` INT NOT NULL AUTO_INCREMENT,
   `tipo_servicio` VARCHAR(100) NOT NULL,
@@ -43,6 +45,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`trabajador`
 -- -----------------------------------------------------
+DROP TABLE `trabajador`;
 CREATE TABLE IF NOT EXISTS `trabajador` (
   `id_trabajador` INT NOT NULL AUTO_INCREMENT,
   `nombre_trabajador` VARCHAR(45) NOT NULL,
@@ -58,6 +61,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`cita`
 -- -----------------------------------------------------
+DROP TABLE `cita`;
 CREATE TABLE IF NOT EXISTS `cita` (
   `id_cita` INT NOT NULL AUTO_INCREMENT,
   `fecha_cita` DATETIME NOT NULL,

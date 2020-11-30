@@ -1,4 +1,10 @@
-<?php include('server.php');?>
+<?php include('server.php');
+if (isset($_GET['logout'])) {
+  session_destroy();
+  unset($_SESSION['username']);
+  header("location: login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +17,7 @@
 <body>
     <nav>
     	<div class="inicio">
-        	<a href="../index.php?logout='1'"><span><i class="material-icons">home</i>Inicio / Cerrar Sesión</span></a>
+        	<a href="index.php?logout='1'"><span><i class="material-icons">home</i>Inicio / Cerrar Sesión</span></a>
       </div>
       <div class="perfil">
             <a class="btnPerfil" href="perfilCliente.php"><?php echo $_SESSION['username'] ?></a>
