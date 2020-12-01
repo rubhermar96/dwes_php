@@ -7,7 +7,7 @@ if (isset($_GET['logout'])) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +32,7 @@ if (isset($_GET['logout'])) {
     </div>
     <div class="titlePage">
       <h2>Administración Clientes</h2>
-      <form method="post" action="perfilAdmin.php" class="formPerfil2">
+      <form method="post" action="adminClientes.php" class="formPerfil2">
         <?php if (isset($_SESSION['success'])) : ?>
           <div class="error success" >
       	    <h3>
@@ -49,7 +49,7 @@ if (isset($_GET['logout'])) {
         </div>
         <table>
           <tbody>
-            <tr><td>ID Usuario</td><td>Usuario</td><td>Nombre</td><td>Apellidos</td><td>Email</td><td>DNI</td><td>Teléfono</td><td>Contraseña</td></tr>
+            <tr><td>ID Usuario</td><td>Usuario</td><td>Nombre</td><td>Apellidos</td><td>Email</td><td>DNI</td><td>Teléfono</td><!--<td>Contraseña</td>--></tr>
             <?php
             $queryClientes = "SELECT * FROM cliente";
             $resultsClientes = mysqli_query($_SESSION['db'],$queryClientes);
@@ -62,8 +62,8 @@ if (isset($_GET['logout'])) {
               </td><td><input type="email" name="emailCliente['.$datosClientes[0].']"  title="Email incorrecto" value="'.$datosClientes[4].'">
               </td><td><input type="text" name="dniCliente['.$datosClientes[0].']"  pattern="^\d{8}[A-Z]$" title="DNI incorrecto" value="'.$datosClientes[1].'">
               </td><td><input type="tel" name="tlfnCliente['.$datosClientes[0].']"  pattern="^[6-9][0-9]{8}$" title="Teléfono incorrecto" value="'.$datosClientes[3].'">
-              </td><td><input type="password" name="passwordCliente['.$datosClientes[0].']"></td>
               <td align=center> <input type=checkbox id="check" name="borra['.$datosClientes[0].']" value="Si"></td></tr>';
+              /*</td><td><input type="password" name="passwordCliente['.$datosClientes[0].']"></td>*/
             }
               ?>
 

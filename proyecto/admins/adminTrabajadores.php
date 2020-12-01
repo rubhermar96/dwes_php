@@ -6,7 +6,7 @@ if (isset($_GET['logout'])) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,9 +31,50 @@ if (isset($_GET['logout'])) {
     </div>
     <div class="titlePage">
       <h2>Administración Trabajadores</h2>
+      <form method="post" action="adminTrabajadores.php" class="formPerfil2">
+        <?php if (isset($_SESSION['success'])) : ?>
+          <div class="error success" >
+      	    <h3>
+              <?php 
+          	    echo $_SESSION['success']; 
+          	    unset($_SESSION['success']);
+              ?>
+      	    </h3>
+          </div>
+        <?php endif ?>
+        <div class="input-group">
+          <!--<button type="submit" class="btn2" name="mod_tra_Admin">Modificar</button>-->
+          <button class="btn2"><a href="register.php" style="color: white; text-decoration: none;">Nuevo Administrador</a></button>
+          <button type="submit" class="btn4" name="del_tra_Admin" onclick="el()">Eliminar Administrador</button>
+        </div>
+        <table>
+          <tbody>
+            <tr><td>ID Usuario</td><td>Usuario</td><td>Nombre</td><td>Apellidos</td><!--<td>Contraseña</td>--></tr>
+            <?php
+            $queryTrabajador = "SELECT * FROM trabajador";
+            $resultsTrabajador = mysqli_query($_SESSION['db'],$queryTrabajador);
+
+            while($datosTrabajador = mysqli_fetch_array($resultsTrabajador)){
+              echo '<tr><td><input type="text" name="idTrabajador['.$datosTrabajador[0].']" value="'.$datosTrabajador[0].'" disabled>
+              </td><td><input type="text" name="usernameTrabajador['.$datosTrabajador[0].']" value="'.$datosTrabajador[2].'">
+              </td><td><input type="text" name="nombreTrabajador['.$datosTrabajador[0].']" pattern="^[a-zA-Z\s]+$" title="Nombre incorrecto" value="'.$datosTrabajador[1].'">
+              </td><td><input type="text" name="apellidosTrabajador['.$datosTrabajador[0].']"  pattern="^[a-zA-Z\s]+$" title="Apellidos incorrectos" value="'.$datosTrabajador[4].'">
+              <td align=center> <input type=checkbox id="check" name="borra['.$datosTrabajador[0].']" value="Si"></td></tr>';
+            }
+            /*</td><td><input type="password" name="passwordTrabajador['.$datosTrabajador[0].']"></td>*/
+              ?>
+
+          </tbody>
+        </table>
+      </form>
     </div>
     <footer>
         <p>Proyecto Desarrollo Web Entorno Servidor - Rubén Herrera Marcos</p>
     </footer>
+    <script>
+      function el(){
+        alert("Cuenta Eliminada");
+      }
+    </script>
 </body>
 </html>

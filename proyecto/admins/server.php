@@ -5,7 +5,7 @@ $username = "";
 $errors = array(); 
 
 // CONEXION BASE DE DATOS
-$db = mysqli_connect('localhost', 'ruben', 'toor', 'scruben');
+$db = mysqli_connect('localhost', 'rubens', 'toor', 'scruben');
 $_SESSION['db']=$db;
 
 // REGISTRO TRABAJADORES
@@ -34,12 +34,8 @@ if (isset($_POST['reg_user'])) {
   	$query = "INSERT INTO trabajador (nombre_trabajador, usuario_trabajador, pass_trabajador, apellidos_trabajador) 
                 VALUES ('$nombre','$username','$password','$apellidos');";
   	mysqli_query($db, $query);
-    $_SESSION['username'] = $username;
-    $_SESSION['passwordTrabajador'] = $password;
-    $_SESSION['nombreTrabajador']=$nombre;
-    $_SESSION['apellidosTrabajador']=$apellidos;
   	$_SESSION['success'] = "Trabajador Registrado";
-  	header('location: index.php');
+  	header('location: adminTrabajadores.php');
   }
 }
 
@@ -104,6 +100,12 @@ if (isset($_POST['login_user'])) {
       mysqli_query($db,"DELETE FROM cliente WHERE (id_cliente=$indice)");
     }
     header('location: adminClientes.php');
+  }
+  if(isset($_POST['del_tra_Admin'])){
+    foreach($_POST['borra'] as $indice=>$valor){
+      mysqli_query($db,"DELETE FROM trabajador WHERE (id_trabajador=$indice)");
+    }
+    header('location: adminTrabajadores.php');
   }
 
   //MODIFICAR CLIENTE DESDE CUENTA ADMIN
