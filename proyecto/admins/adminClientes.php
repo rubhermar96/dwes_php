@@ -1,4 +1,5 @@
-<?php include('server.php');
+<?php 
+include('server.php');
 if (isset($_GET['logout'])) {
   session_destroy();
   unset($_SESSION['username']);
@@ -31,6 +32,32 @@ if (isset($_GET['logout'])) {
     </div>
     <div class="titlePage">
       <h2>Administración Clientes</h2>
+      <form method="post" action="perfilAdmin.php" class="formPerfil">
+        <?php if (isset($_SESSION['success'])) : ?>
+          <div class="error success" >
+      	    <h3>
+              <?php 
+          	    echo $_SESSION['success']; 
+          	    unset($_SESSION['success']);
+              ?>
+      	    </h3>
+          </div>
+  	    <?php endif ?>
+        <table>
+          <tbody>
+            <tr><td>ID Usuario</td><td>Usuario</td><td>Nombre</td><td>Apellidos</td><td>Email</td><td>DNI</td><td>Teléfono</td><td>Contraseña</td></tr>
+            <?php while($datosClientes){
+              echo "<tr><td>a</td><td>a</td><td>a</td><td>a</td><td>a</td><td>a</td><td>a</td>";
+            }
+              ?>
+
+          </tbody>
+        </table>
+        <div class="input-group">
+          <button type="submit" class="btn2" name="mod_admin">Modificar</button>
+          <button type="submit" class="btn4" name="del_admin" onclick="el()">Eliminar Cuenta</button>
+        </div>
+      </form>
     </div>
     <footer>
         <p>Proyecto Desarrollo Web Entorno Servidor - Rubén Herrera Marcos</p>

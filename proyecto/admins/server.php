@@ -54,6 +54,11 @@ if (isset($_POST['login_user'])) {
         $query = "SELECT * FROM trabajador WHERE usuario_trabajador='$username' AND pass_trabajador='$password'";
         $results = mysqli_query($db, $query);
         $datos = mysqli_fetch_array($results);
+        //Adminsitracion Clientes
+        $queryClientes = "SELECT * FROM cliente";
+        $resultsClientes = mysqli_query($db,$queryClientes);
+        $datosClientes = mysqli_fetch_array($results);
+        $_SESSION['datosClientes']=$datosClientes;
         if (mysqli_num_rows($results) == 1) {
           $_SESSION['username'] = $username;
           $_SESSION['passwordTrabajador'] = $datos[3];
