@@ -46,8 +46,8 @@ if (isset($_GET['logout'])) {
         <table>
           <tbody>
             <tr><td>ID Usuario</td><td>Usuario</td><td>Nombre</td><td>Apellidos</td><td>Email</td><td>DNI</td><td>Teléfono</td><td>Contraseña</td></tr>
-            <?php while($datosClientes){
-              echo "<tr><td>a</td><td>a</td><td>a</td><td>a</td><td>a</td><td>a</td><td>a</td>";
+            <?php for($i=0;$i<10;$i++){
+              echo "<tr><td>a</td><td>a</td><td>a</td><td>a</td><td>a</td><td>a</td><td>a</td><td>a</td></tr>";
             }
               ?>
 
