@@ -46,8 +46,12 @@ if (isset($_GET['logout'])) {
         <table>
           <tbody>
             <tr><td>ID Usuario</td><td>Usuario</td><td>Nombre</td><td>Apellidos</td><td>Email</td><td>DNI</td><td>Teléfono</td><td>Contraseña</td></tr>
-            <?php for($i=0;$i<10;$i++){
-              echo "<tr><td>a</td><td>a</td><td>a</td><td>a</td><td>a</td><td>a</td><td>a</td><td>a</td></tr>";
+            <?php
+            $queryClientes = "SELECT * FROM cliente";
+            $resultsClientes = mysqli_query($_SESSION['db'],$queryClientes);
+
+            while($datosClientes = mysqli_fetch_array($resultsClientes)){
+              echo "<tr><td>".$datosClientes[0]."</td><td>".$datosClientes[6]."</td><td>".$datosClientes[2]."</td><td>".$datosClientes[7]."</td><td>".$datosClientes[4]."</td><td>".$datosClientes[1]."</td><td>".$datosClientes[3]."</td><td>"."Contraseña"."</td></tr>";
             }
               ?>
 
