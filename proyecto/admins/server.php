@@ -97,5 +97,39 @@ if (isset($_POST['login_user'])) {
         $_SESSION['success'] = "Modificado Correctamente";
     }
   }
-  
+
+  //ELIMINAR CLIENTE DESDE CUENTA ADMIN
+  if(isset($_POST['del_Cli_Admin'])){
+    foreach($_POST['borra'] as $indice=>$valor){
+      mysqli_query($db,"DELETE FROM cliente WHERE (id_cliente=$indice)");
+    }
+    header('location: adminClientes.php');
+  }
+
+  //MODIFICAR CLIENTE DESDE CUENTA ADMIN
+  /*if (isset($_POST['mod_Cli_Admin'])){
+      $username = mysqli_real_escape_string($db, $_POST['usernameCliente']);
+      $email = mysqli_real_escape_string($db, $_POST['emailCliente']);
+      $password = mysqli_real_escape_string($db, $_POST['passwordCliente']);
+      $nombre = mysqli_real_escape_string($db, $_POST['nombreCliente']);
+      $apellidos = mysqli_real_escape_string($db, $_POST['apellidosCliente']);
+      $dni = mysqli_real_escape_string($db, $_POST['dniCliente']);
+      $tlfn = mysqli_real_escape_string($db, $_POST['tlfnCliente']);
+      if($password!=""){
+        $password=md5($password);
+        mysqli_query($db,"UPDATE cliente SET pass_cliente='$password', usuario_cliente='$username', email_cliente='$email',
+        nombre_cliente='$nombre', apellidos_cliente='$apellidos', dni_cliente='$dni', tfno_cliente=$tlfn
+        WHERE id_cliente=$indice;");
+      }else{
+        mysqli_query($db,"UPDATE cliente SET usuario_cliente='$username', email_cliente='$email',
+        nombre_cliente='$nombre', apellidos_cliente='$apellidos', dni_cliente='$dni', tfno_cliente=$tlfn
+        WHERE id_cliente=$indice;");
+      }
+    header('location: adminClientes.php');
+  }*/
+  if(isset($_POST['mod_Cli_Admin'])){
+    foreach($_POST['usernameCliente'] as $key => $value){
+      mysqli_query($db,"UPDATE cliente SET usuario_cliente='$value' WHERE id_usuario=$key");
+    }
+  }
   ?>
