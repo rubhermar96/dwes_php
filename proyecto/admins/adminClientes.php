@@ -55,15 +55,15 @@ if (isset($_GET['logout'])) {
             $resultsClientes = mysqli_query($_SESSION['db'],$queryClientes);
 
             while($datosClientes = mysqli_fetch_array($resultsClientes)){
-              echo '<tr><td><input type="text" name="idCliente" value="'.$datosClientes[0].'" disabled>
-              </td><td><input type="text" name="usernameCliente" value="'.$datosClientes[6].'">
-              </td><td><input type="text" name="nombreCliente" pattern="^[a-zA-Z\s]+$" title="Nombre incorrecto" value="'.$datosClientes[2].'">
-              </td><td><input type="text" name="apellidosCliente"  pattern="^[a-zA-Z\s]+$" title="Apellidos incorrectos" value="'.$datosClientes[7].'">
-              </td><td><input type="email" name="emailCliente"  title="Email incorrecto" value="'.$datosClientes[4].'">
-              </td><td><input type="text" name="dniCliente"  pattern="^\d{8}[A-Z]$" title="DNI incorrecto" value="'.$datosClientes[1].'">
-              </td><td><input type="tel" name="tlfnCliente"  pattern="^[6-9][0-9]{8}$" title="Teléfono incorrecto" value="'.$datosClientes[3].'">
-              </td><td><input type="password" name="passwordCliente"></td>
-              <td align=center> <input type=checkbox id="check" name=borra['.$datosClientes[0].'] value="Si"></td></tr>';
+              echo '<tr><td><input type="text" name="idCliente['.$datosClientes[0].']" value="'.$datosClientes[0].'" disabled>
+              </td><td><input type="text" name="usernameCliente['.$datosClientes[0].']" value="'.$datosClientes[6].'">
+              </td><td><input type="text" name="nombreCliente['.$datosClientes[0].']" pattern="^[a-zA-Z\s]+$" title="Nombre incorrecto" value="'.$datosClientes[2].'">
+              </td><td><input type="text" name="apellidosCliente['.$datosClientes[0].']"  pattern="^[a-zA-Z\s]+$" title="Apellidos incorrectos" value="'.$datosClientes[7].'">
+              </td><td><input type="email" name="emailCliente['.$datosClientes[0].']"  title="Email incorrecto" value="'.$datosClientes[4].'">
+              </td><td><input type="text" name="dniCliente['.$datosClientes[0].']"  pattern="^\d{8}[A-Z]$" title="DNI incorrecto" value="'.$datosClientes[1].'">
+              </td><td><input type="tel" name="tlfnCliente['.$datosClientes[0].']"  pattern="^[6-9][0-9]{8}$" title="Teléfono incorrecto" value="'.$datosClientes[3].'">
+              </td><td><input type="password" name="passwordCliente['.$datosClientes[0].']"></td>
+              <td align=center> <input type=checkbox id="check" name="borra['.$datosClientes[0].']" value="Si"></td></tr>';
             }
               ?>
 
