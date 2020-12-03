@@ -44,7 +44,6 @@ if (isset($_GET['logout'])) {
           </div>
         <?php endif ?>
         <div class="input-group">
-          <button type="submit" class="btn2" name="mod_Cli_Admin">Modificar</button>
           <button type="submit" class="btn4" name="del_Cli_Admin" onclick="el()">Eliminar Cuenta</button>
         </div>
         <table>
@@ -57,11 +56,11 @@ if (isset($_GET['logout'])) {
             while($datosClientes = mysqli_fetch_array($resultsClientes)){
               echo '<tr><td><input type="text" name="idCliente['.$datosClientes[0].']" value="'.$datosClientes[0].'" disabled>
               </td><td><input type="text" name="usernameCliente['.$datosClientes[0].']" value="'.$datosClientes[6].'">
-              </td><td><input type="text" name="nombreCliente['.$datosClientes[0].']" pattern="^[a-zA-Z\s]+$" title="Nombre incorrecto" value="'.$datosClientes[2].'">
-              </td><td><input type="text" name="apellidosCliente['.$datosClientes[0].']"  pattern="^[a-zA-Z\s]+$" title="Apellidos incorrectos" value="'.$datosClientes[7].'">
-              </td><td><input type="email" name="emailCliente['.$datosClientes[0].']"  title="Email incorrecto" value="'.$datosClientes[4].'">
-              </td><td><input type="text" name="dniCliente['.$datosClientes[0].']"  pattern="^\d{8}[A-Z]$" title="DNI incorrecto" value="'.$datosClientes[1].'">
-              </td><td><input type="tel" name="tlfnCliente['.$datosClientes[0].']"  pattern="^[6-9][0-9]{8}$" title="Teléfono incorrecto" value="'.$datosClientes[3].'">
+              </td><td><input type="text" name="nombreCliente['.$datosClientes[0].']" value="'.$datosClientes[2].'">
+              </td><td><input type="text" name="apellidosCliente['.$datosClientes[0].']" value="'.$datosClientes[7].'">
+              </td><td><input type="email" name="emailCliente['.$datosClientes[0].']" value="'.$datosClientes[4].'">
+              </td><td><input type="text" name="dniCliente['.$datosClientes[0].']" value="'.$datosClientes[1].'">
+              </td><td><input type="tel" name="tlfnCliente['.$datosClientes[0].']" value="'.$datosClientes[3].'">
               <td align=center> <input type=checkbox id="check" name="borra['.$datosClientes[0].']" value="Si"></td></tr>';
               /*</td><td><input type="password" name="passwordCliente['.$datosClientes[0].']"></td>*/
             }
