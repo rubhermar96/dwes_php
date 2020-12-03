@@ -7,7 +7,7 @@ $errors = array();
 
 // CONEXION BASE DE DATOS
 $db = mysqli_connect('localhost', 'ruben', 'toor', 'scruben');
-
+$_SESSION['db']=$db;
 // REGISTRAR CLIENTE
 if (isset($_POST['reg_user'])) {
   // RECEPCION DATOS DE REGISTER.PHP
@@ -63,6 +63,7 @@ if (isset($_POST['login_user'])) {
         $results = mysqli_query($db, $query);
         $datos = mysqli_fetch_array($results);
         if (mysqli_num_rows($results) == 1) {
+          $_SESSION['idCliente']=$datos[0];
           $_SESSION['username'] = $username;
           $_SESSION['nombreCliente'] = $datos[2];
           $_SESSION['dniCliente'] = $datos[1];
@@ -121,5 +122,20 @@ if (isset($_POST['login_user'])) {
     $_SESSION['success'] = "Cuenta Eliminada Correctamente";
     header('location: login.php');
   }
+    // REGISTRO Cita
+if (isset($_POST['reg_cita'])) {
+  // RECEPCION DATOS DE inicioCliente.php
+  $fechaCita = mysqli_real_escape_string($db, $_POST['fechaCita']);
+  $idCliente = mysqli_real_escape_string($db, $_POST['idCliente']);
+  $idServicio = mysqli_real_escape_string($db, $_POST['idServicio']);
+  $idTrabajador = mysqli_real_escape_string($db, $_POST['idTrabajador']);
+  $horaCita = mysqli_real_escape_string($db, $_POST['horaCita']);
+  
+  	$query = "INSERT INTO cita (fecha_cita, hora_cita, id_cliente, id_servicio, Trabajador_id_trabajador) 
+                VALUES ('$fechaCita','$horaCita','$idCliente','$idServicio','$idTrabajador');";
+  	mysqli_query($db, $query);
+    header('location: citasCliente.php');
+    $_SESSION['success'] = "Cita Registrada";
+}
 
   ?>

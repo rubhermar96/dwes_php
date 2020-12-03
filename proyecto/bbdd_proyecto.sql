@@ -9,7 +9,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 
 -- Table `cliente`
 -- -----------------------------------------------------
-DROP TABLE `cliente`;
+DROP TABLE  `cliente`;
 CREATE TABLE IF NOT EXISTS `cliente` (
   `id_cliente` INT NOT NULL AUTO_INCREMENT,
   `dni_cliente` VARCHAR(9) NOT NULL,
@@ -21,31 +21,30 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `apellidos_cliente` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id_cliente`),
   UNIQUE INDEX `dni_cliente_UNIQUE` (`dni_cliente` ASC) ,
-  UNIQUE INDEX `tfno_cliente_UNIQUE` (`tfno_cliente` ASC) ,
   UNIQUE INDEX `email_cliente_UNIQUE` (`email_cliente` ASC) ,
   UNIQUE INDEX `usuario_cliente_UNIQUE` (`usuario_cliente` ASC))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`servicio`
+-- Table `servicio`
 -- -----------------------------------------------------
-DROP TABLE `servicio`;
+DROP TABLE  `servicio`;
 CREATE TABLE IF NOT EXISTS `servicio` (
   `id_servicio` INT NOT NULL AUTO_INCREMENT,
-  `tipo_servicio` VARCHAR(100) NOT NULL,
+  `nombre_servicio` VARCHAR(100) NOT NULL,
   `coste_servicio` DOUBLE(4,2) NOT NULL,
-  `tiempo_servicio` SET('1', '2', '3') NOT NULL,
+  `tipo_servicio` SET('H', 'M', 'N') NOT NULL,
   PRIMARY KEY (`id_servicio`),
-  UNIQUE INDEX `tipo_servicio_UNIQUE` (`tipo_servicio` ASC) ,
+  UNIQUE INDEX `tipo_servicio_UNIQUE` (`nombre_servicio` ASC) ,
   UNIQUE INDEX `id_servicio_UNIQUE` (`id_servicio` ASC) )
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`trabajador`
+-- Table `trabajador`
 -- -----------------------------------------------------
-DROP TABLE `trabajador`;
+DROP TABLE  `trabajador`;
 CREATE TABLE IF NOT EXISTS `trabajador` (
   `id_trabajador` INT NOT NULL AUTO_INCREMENT,
   `nombre_trabajador` VARCHAR(45) NOT NULL,
@@ -59,12 +58,13 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`cita`
+-- Table `cita`
 -- -----------------------------------------------------
-DROP TABLE `cita`;
+DROP TABLE  `cita`;
 CREATE TABLE IF NOT EXISTS `cita` (
   `id_cita` INT NOT NULL AUTO_INCREMENT,
   `fecha_cita` DATETIME NOT NULL,
+  `hora_cita` VARCHAR(5) NOT NULL,
   `id_cliente` INT NOT NULL,
   `id_servicio` INT NOT NULL,
   `Trabajador_id_trabajador` INT NOT NULL,
@@ -75,17 +75,17 @@ CREATE TABLE IF NOT EXISTS `cita` (
   INDEX `fk_Cita_Trabajador1_idx` (`Trabajador_id_trabajador` ASC) ,
   CONSTRAINT `fk_Cita_Cliente`
     FOREIGN KEY (`id_cliente`)
-    REFERENCES `mydb`.`cliente` (`id_cliente`)
+    REFERENCES `cliente` (`id_cliente`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   CONSTRAINT `fk_Cita_Servicio`
     FOREIGN KEY (`id_servicio`)
-    REFERENCES `mydb`.`servicio` (`id_servicio`)
+    REFERENCES `servicio` (`id_servicio`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   CONSTRAINT `fk_Cita_Trabajador`
     FOREIGN KEY (`Trabajador_id_trabajador`)
-    REFERENCES `mydb`.`trabajador` (`id_trabajador`)
+    REFERENCES `trabajador` (`id_trabajador`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -94,7 +94,3 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
--- INSERT ADMIN
-INSERT INTO `trabajador` (`nombre_trabajador`,`usuario_trabajador`,`pass_trabajador`,`apellidos_trabajador`)
-VALUES ('Administrador','admin','admin','Administrador');
