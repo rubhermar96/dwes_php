@@ -47,7 +47,7 @@ if (isset($_GET['logout'])) {
           <tbody>
             <tr><td>ID Cita</td><td>Fecha Cita</td><td>Hora Cita</td><td>Servicio</td><td>Peluquero</td></tr>
             <?php
-            $queryCitas = "SELECT cita.id_cita, cita.fecha_cita, cita.hora_cita, servicio.nombre_servicio, trabajador.nombre_trabajador FROM cita, servicio, trabajador WHERE cita.id_servicio=servicio.id_servicio AND cita.Trabajador_id_trabajador=trabajador.id_trabajador ORDER BY fecha_cita;";
+            $queryCitas = "SELECT cita.id_cita, cita.fecha_cita, cita.hora_cita, servicio.nombre_servicio, trabajador.nombre_trabajador FROM cita, servicio, trabajador WHERE cita.id_servicio=servicio.id_servicio AND cita.Trabajador_id_trabajador=trabajador.id_trabajador AND cita.id_cliente=".$_SESSION['idCliente']." ORDER BY fecha_cita;";
             $resultsCitas = mysqli_query($_SESSION['db'],$queryCitas);
 
             while($datosCitas = mysqli_fetch_array($resultsCitas)){

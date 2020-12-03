@@ -78,9 +78,9 @@ if (isset($_GET['logout'])) {
 
             while($datosServicio = mysqli_fetch_array($resultsServicio)){
               echo '<tr><td><input type="text" name="idServicio['.$datosServicio[0].']" value="'.$datosServicio[0].'" disabled>
-              </td><td><input type="text" name="nombreServicio['.$datosServicio[0].']" value="'.$datosServicio[3].'">
+              </td><td><input type="text" name="nombreServicio['.$datosServicio[0].']" value="'.$datosServicio[1].'">
               </td><td><input type="text" name="costeServicio['.$datosServicio[0].']" value="'.$datosServicio[2].'">
-              </td><td><input type="text" name="tipoServicio['.$datosServicio[0].']"  pattern="^[a-zA-Z\s]+$" title="Apellidos incorrectos" value="'.$datosServicio[1].'">
+              </td><td><input type="text" name="tipoServicio['.$datosServicio[0].']"  pattern="^[a-zA-Z\s]+$" title="Apellidos incorrectos" value="'.$datosServicio[3].'">
               <td align=center> <input type=checkbox id="check" name="borra['.$datosServicio[0].']" value="Si"></td></tr>';
             }
               ?>
