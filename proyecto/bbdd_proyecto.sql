@@ -93,3 +93,27 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+/*Inserts*/
+INSERT INTO `cliente` VALUES 
+(1,'88321234E','Marta',698432123,'email1@email.com','81dc9bdb52d04dc20036dbd8313ed055','usuario1','Lopez'),
+(2,'44332123E','Manuel',654323452,'email2@email.com','81dc9bdb52d04dc20036dbd8313ed055','usuario2','Nuñez Pérez'),
+(3,'59483234L','Juan Antonio',987876754,'email3@email.com','81dc9bdb52d04dc20036dbd8313ed055','usuario3','Hernández Hernández');
+
+INSERT INTO `servicio` VALUES (1,'Corte Pelo Hombre',12.99,'H'),
+(2,'Corte Pelo Mujer',21.99,'M'),
+(3,'Corte Pelo Niño/a',9.99,'N'),
+(4,'Corte + Barba Hombre',15.99,'H'),
+(5,'Tinte Mujer',30.00,'M'),
+(6,'Tinte Hombre',20.55,'H'),
+(7,'Tinte Niño/a',20.55,'N');
+
+INSERT INTO `trabajador` VALUES (1,'Administrador','admin','admin','Administrador'),
+(2,'Mario','trabajador1','81dc9bdb52d04dc20036dbd8313ed055','Pena Lopez'),
+(3,'Maria','trabajador2','81dc9bdb52d04dc20036dbd8313ed055','Sierra Castillo');
+
+INSERT INTO `cita` VALUES (4,'2020-12-17 00:00:00','12:30',1,2,2),
+(5,'2020-12-17 00:00:00','13:00',1,5,2),
+(6,'2020-12-16 00:00:00','19:00',2,4,3),
+(7,'2020-12-23 00:00:00','18:00',3,3,3),
+(8,'2020-12-23 00:00:00','18:30',3,7,3);
