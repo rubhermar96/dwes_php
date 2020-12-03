@@ -131,6 +131,22 @@
     border-radius: 5px;
     border: 1px solid gray;
   }
+  .input-group select{
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 0;
+    background-color: rgb(230, 246, 252);
+    border: 1px solid gray;
+    border-radius: 5px;
+    position: relative;
+    transition: all 0.25s ease;
+  }
+  .input-group select:hover{
+    background-color: white;
+  }
   .btn {
     padding: 10px;
     font-size: 15px;
@@ -199,6 +215,32 @@
     border: black solid 2px;
     border-radius: 5px;
     width: 100%;
+    overflow: scroll;
+    max-height: 600px;
+  }
+  /*Scrollbar*/
+  .formPerfil2::-webkit-scrollbar{
+    -webkit-appearance: none;
+  }
+  .formPerfil2::-webkit-scrollbar:vertical{
+    width: 10px;
+  }
+  .contenedor::-webkit-scrollbar-button:increment{
+    display: none;
+  }
+  .formPerfil2::-webkit-scrollbar-button{
+    display: none;
+  }
+  .formPerfil2::-webkit-scrollbar:horizontal{
+    display: none;
+  }
+  .formPerfil2::-webkit-scrollbar-thumb{
+    background-color: rgb(201, 199, 199);
+    border-radius: 20px;
+    border: 2px solid white;
+  }
+  .formPerfil2::-webkit-scrollbar-track{
+    border-radius: 10px;
   }
   tr{
   border-radius: 5px;
@@ -224,6 +266,23 @@
     cursor: pointer;
     height: 25px;
     width: 25px;
+  }
+  #regSer div{
+    display: inline-block;
+    margin-left: 25px;
+  }
+  #regSer div input{
+    height: 30px;
+    width: 93%;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid gray;
+  }
+  #regSer div label{
+    display: block;
+    text-align: left;
+    margin: 3px;
   }
   /*footer*/
   footer{

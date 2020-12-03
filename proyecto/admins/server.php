@@ -5,7 +5,7 @@ $username = "";
 $errors = array(); 
 
 // CONEXION BASE DE DATOS
-$db = mysqli_connect('localhost', 'rubens', 'toor', 'scruben');
+$db = mysqli_connect('localhost', 'ruben', 'toor', 'scruben');
 $_SESSION['db']=$db;
 
 // REGISTRO TRABAJADORES
@@ -134,4 +134,39 @@ if (isset($_POST['login_user'])) {
       mysqli_query($db,"UPDATE cliente SET usuario_cliente='$value' WHERE id_usuario=$key");
     }
   }
+
+  // REGISTRO Servicios
+if (isset($_POST['reg_service'])) {
+  // RECEPCION DATOS DE adminServicios.php
+  $tipoServicio = mysqli_real_escape_string($db, $_POST['tipoServicio']);
+  $costeServicio = mysqli_real_escape_string($db, $_POST['costeServicio']);
+  $nombreServicio = mysqli_real_escape_string($db, $_POST['nombreServicio']);
+  
+  //COMPROBAR SI EL USUARIO YA EXISTE
+  $user_check_query = "SELECT * FROM servicio WHERE nombre_servicio='$nombreServicio' LIMIT 1";
+  $result = mysqli_query($db, $user_check_query);
+  $servicio = mysqli_fetch_assoc($result);
+  
+  if ($servicio) { 
+    if ($servicio['nombre_servicio'] === $nombreServicio) {
+      array_push($errors, "El Servicio ya existe");
+    }
+  }
+
+  //REGISTRO DEL Servicio
+  if (count($errors) == 0) {
+
+  	$query = "INSERT INTO servicio (tipo_servicio, coste_servicio, nombre_servicio) 
+                VALUES ('$tipoServicio',$costeServicio,'$nombreServicio');";
+  	mysqli_query($db, $query);
+  	$_SESSION['success'] = "Servicio Registrado";
+  	header('location: adminServicios.php');
+  } 
+}
+if(isset($_POST['del_ser_Admin'])){
+  foreach($_POST['borra'] as $indice=>$valor){
+    mysqli_query($db,"DELETE FROM servicio WHERE (id_servicio=$indice)");
+  }
+  header('location: adminServicios.php');
+}
   ?>
