@@ -1,41 +1,41 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-size: 120%;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  /*Navegador Principal */
-  nav{
-    background-color: rgb(39, 39, 39);
-    width: 100%;
-    position: sticky;
-    top: 0px;
-    padding: 10px;
-    z-index: 2;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 120%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+ /*Navegador Principal */
+nav{
+  background-color: rgb(39, 39, 39);
+  width: 100%;
+  position: sticky;
+  top: 0px;
+  padding: 10px;
+  z-index: 2;
 }
 .inicio{
-    position: relative;
-    left: 10px;
-    padding: 10px;
+  position: relative;
+  left: 10px;
+  padding: 10px;
 }
 .inicio i{
-    padding-right: 10px;
+  padding-right: 10px;
 }
 .inicio a{
-    color: white;
-    font-size: 32px;
+  color: white;
+  font-size: 32px;
 }
 .inicio a:hover{
-    color: rgb(255, 70, 24);
+  color: rgb(255, 70, 24);
 }
 .perfil{
   position: absolute;
   right: 20px;
-  top: 25px;
+  top: 24px;
 }
 .perfil .btnPerfil{
   background-color: rgb(39, 39, 39);
@@ -55,128 +55,128 @@ a{
 }
 /*Segundo Menu */
 .nav2{
-  width: 100%;
-  padding: 5px;
-  background-color: rgb(190, 190, 190);
-  border-bottom: 2px solid black;
-  text-align: center;
+width: 100%;
+padding: 5px;
+background-color: rgb(190, 190, 190);
+border-bottom: 2px solid black;
+text-align: center;
 
 }
 .btn2 {
-  padding: 15px;
-  font-size: 20px;
-  color: white;
-  background: rgb(34, 155, 70);
-  border: none;
-  border-radius: 5px;
+padding: 15px;
+font-size: 20px;
+color: white;
+background: rgb(34, 155, 70);
+border: none;
+border-radius: 5px;
 }
 .btn2:hover{
-  background-color: rgb(255, 173, 153);
+background-color: rgb(255, 173, 153);
 }
 .btn3 {
-  padding: 15px;
-  font-size: 20px;
+padding: 15px;
+font-size: 20px;
+color: white;
+background: rgb(255, 70, 24);
+border: none;
+border-radius: 5px;
+}
+.btn3:hover{
+background-color: rgb(255, 173, 153);
+}
+.btn4 {
+padding: 15px;
+font-size: 20px;
+color: white;
+background: red;
+border: none;
+border-radius: 5px;
+}
+.btn4:hover{
+background-color: rgb(255, 173, 153);
+}
+/*Login Register y pagina confirmación */
+.header {
+  width: 30%;
+  margin: 50px auto 0px;
+  color: white;
+  background: rgb(255, 70, 24);
+  text-align: center;
+  border: 2px solid #B0C4DE;
+  border-bottom: none;
+  border-radius: 10px 10px 0px 0px;
+  padding: 20px;
+}
+form, .content {
+  width: 30%;
+  margin: 0px auto;
+  padding: 20px;
+  border: 2px solid #B0C4DE;
+  background: white;
+  border-radius: 0px 0px 10px 10px;
+}
+.input-group {
+  margin: 10px 0px 10px 0px;
+}
+.input-group label {
+  display: block;
+  text-align: left;
+  margin: 3px;
+}
+.input-group input {
+  height: 30px;
+  width: 93%;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+.input-group select{
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 0;
+  background-color: rgb(230, 246, 252);
+  border: 1px solid gray;
+  border-radius: 5px;
+  position: relative;
+  transition: all 0.25s ease;
+}
+.input-group select:hover{
+  background-color: white;
+}
+.btn {
+  padding: 10px;
+  font-size: 15px;
   color: white;
   background: rgb(255, 70, 24);
   border: none;
   border-radius: 5px;
 }
-.btn3:hover{
+.btn:hover{
   background-color: rgb(255, 173, 153);
 }
-.btn4 {
-  padding: 15px;
-  font-size: 20px;
-  color: white;
-  background: red;
-  border: none;
-  border-radius: 5px;
+.error {
+  width: 92%; 
+  margin: 0px auto; 
+  padding: 10px; 
+  border: 1px solid #a94442; 
+  color: #a94442; 
+  background: #f2dede; 
+  border-radius: 5px; 
+  text-align: left;
 }
-.btn4:hover{
-  background-color: rgb(255, 173, 153);
+.success {
+  color: #3c763d; 
+  background: #dff0d8; 
+  border: 1px solid #3c763d;
+  margin-bottom: 20px;
 }
-  /*Login Register y pagina confirmacion */
-  .header {
-    width: 30%;
-    margin: 50px auto 0px;
-    color: white;
-    background: rgb(255, 70, 24);
-    text-align: center;
-    border: 2px solid #B0C4DE;
-    border-bottom: none;
-    border-radius: 10px 10px 0px 0px;
-    padding: 20px;
-  }
-  form, .content {
-    width: 30%;
-    margin: 0px auto;
-    padding: 20px;
-    border: 2px solid #B0C4DE;
-    background: white;
-    border-radius: 0px 0px 10px 10px;
-  }
-  .input-group {
-    margin: 10px 0px 10px 0px;
-  }
-  .input-group label {
-    display: block;
-    text-align: left;
-    margin: 3px;
-  }
-  .input-group input {
-    height: 30px;
-    width: 93%;
-    padding: 5px 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid gray;
-  }
-  .input-group select{
-    display: inline-block;
-    width: 100%;
-    cursor: pointer;
-    padding: 5px;
-    font-size: 16px;
-    border-radius: 0;
-    background-color: rgb(230, 246, 252);
-    border: 1px solid gray;
-    border-radius: 5px;
-    position: relative;
-    transition: all 0.25s ease;
-  }
-  .input-group select:hover{
-    background-color: white;
-  }
-  .btn {
-    padding: 10px;
-    font-size: 15px;
-    color: white;
-    background: rgb(255, 70, 24);
-    border: none;
-    border-radius: 5px;
-  }
-  .btn:hover{
-    background-color: rgb(255, 173, 153);
-  }
-  .error {
-    width: 92%; 
-    margin: 0px auto; 
-    padding: 10px; 
-    border: 1px solid #a94442; 
-    color: #a94442; 
-    background: #f2dede; 
-    border-radius: 5px; 
-    text-align: left;
-  }
-  .success {
-    color: #3c763d; 
-    background: #dff0d8; 
-    border: 1px solid #3c763d;
-    margin-bottom: 20px;
-  }
-  /*Contenido Formularios*/
+/*Contenido Formularios*/
 .titlePage{
-  margin: 10px 15% 10px 15%;
+  margin: 10px 10% 10px 10%;
 }
 .titlePage h2{
   padding: 10px;
@@ -190,40 +190,6 @@ a{
   border-radius: 5px;
   width: 100%;
 }
-  /*formPerfil2*/
-  .formPerfil2{
-    margin: 10px 0px 20px;
-    padding: 10px;
-    border: black solid 2px;
-    border-radius: 5px;
-    width: 100%;
-    overflow: scroll;
-    max-height: 600px;
-  }
-  /*Scrollbar*/
-  .formPerfil2::-webkit-scrollbar{
-    -webkit-appearance: none;
-  }
-  .formPerfil2::-webkit-scrollbar:vertical{
-    width: 10px;
-  }
-  .contenedor::-webkit-scrollbar-button:increment{
-    display: none;
-  }
-  .formPerfil2::-webkit-scrollbar-button{
-    display: none;
-  }
-  .formPerfil2::-webkit-scrollbar:horizontal{
-    display: none;
-  }
-  .formPerfil2::-webkit-scrollbar-thumb{
-    background-color: rgb(201, 199, 199);
-    border-radius: 20px;
-    border: 2px solid white;
-  }
-  .formPerfil2::-webkit-scrollbar-track{
-    border-radius: 10px;
-  }
 tr{
 border-radius: 5px;
 background-color: rgb(230, 246, 252);
@@ -242,6 +208,65 @@ td{
   font-size: 18px;
   color: black;
 }
+/*formPerfil2*/
+.formPerfil2{
+  margin: 10px 0px 20px;
+  padding: 10px;
+  border: black solid 2px;
+  border-radius: 5px;
+  width: 100%;
+  overflow: scroll;
+  max-height: 600px;
+}
+/*Scrollbar*/
+.formPerfil2::-webkit-scrollbar{
+  -webkit-appearance: none;
+}
+.formPerfil2::-webkit-scrollbar:vertical{
+  width: 10px;
+}
+.contenedor::-webkit-scrollbar-button:increment{
+  display: none;
+}
+.formPerfil2::-webkit-scrollbar-button{
+  display: none;
+}
+.formPerfil2::-webkit-scrollbar:horizontal{
+  display: none;
+}
+.formPerfil2::-webkit-scrollbar-thumb{
+  background-color: rgb(201, 199, 199);
+  border-radius: 20px;
+  border: 2px solid white;
+}
+.formPerfil2::-webkit-scrollbar-track{
+  border-radius: 10px;
+}
+tr{
+border-radius: 5px;
+background-color: rgb(230, 246, 252);
+}
+.formPerfil2 td{
+  padding: 5px 5px 5px 5px;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 5px;
+}
+.formPerfil2 input{
+  border: none;
+  background-color: rgb(230, 246, 252);
+  padding: 5px;
+  text-align: center;
+  font-size: 15px;
+  width: 120px;
+  color: black;
+}
+#check{
+  margin: 5px;
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+}
 #regSer div{
   display: inline-block;
   margin-left: 25px;
@@ -259,18 +284,16 @@ td{
   text-align: left;
   margin: 3px;
 }
-
-  /*footer*/
-  footer{
-    background-color:  rgb(22, 22, 22);
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-    position: fixed;
-    bottom: 0px;
+/*footer*/
+footer{
+  background-color:  rgb(22, 22, 22);
+  padding: 30px;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
 }
 footer p{
-    font-size: 20px;
-    color: whitesmoke;
+  font-size: 20px;
+  color: whitesmoke;
 }
-

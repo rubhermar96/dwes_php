@@ -3,6 +3,7 @@ session_start();
 
 $username = "";
 $email    = "";
+$fechaCita = new DateTime();
 $errors = array(); 
 
 // CONEXION BASE DE DATOS
@@ -126,16 +127,23 @@ if (isset($_POST['login_user'])) {
 if (isset($_POST['reg_cita'])) {
   // RECEPCION DATOS DE inicioCliente.php
   $fechaCita = mysqli_real_escape_string($db, $_POST['fechaCita']);
-  $idCliente = mysqli_real_escape_string($db, $_POST['idCliente']);
+  $idCliente = $_SESSION['idCliente'];
   $idServicio = mysqli_real_escape_string($db, $_POST['idServicio']);
   $idTrabajador = mysqli_real_escape_string($db, $_POST['idTrabajador']);
   $horaCita = mysqli_real_escape_string($db, $_POST['horaCita']);
+
   
   	$query = "INSERT INTO cita (fecha_cita, hora_cita, id_cliente, id_servicio, Trabajador_id_trabajador) 
                 VALUES ('$fechaCita','$horaCita','$idCliente','$idServicio','$idTrabajador');";
   	mysqli_query($db, $query);
-    header('location: citasCliente.php');
+    //header('location: citasCliente.php');
     $_SESSION['success'] = "Cita Registrada";
+}
+if(isset($_POST['del_cita_Cli'])){
+  foreach($_POST['borra'] as $indice=>$valor){
+    mysqli_query($db,"DELETE FROM cita WHERE (id_cita=$indice)");
+  }
+  header('location: citasCliente.php');
 }
 
   ?>

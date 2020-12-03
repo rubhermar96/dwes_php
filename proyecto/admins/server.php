@@ -169,4 +169,10 @@ if(isset($_POST['del_ser_Admin'])){
   }
   header('location: adminServicios.php');
 }
+if(isset($_POST['del_cita_Admin'])){
+  foreach($_POST['borra'] as $indice=>$valor){
+    mysqli_query($db,"DELETE FROM cita WHERE (id_cita=$indice)");
+  }
+  header('location: inicioAdmins.php');
+}
   ?>

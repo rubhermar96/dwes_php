@@ -29,7 +29,7 @@ if (isset($_GET['logout'])) {
     </div>
     <div class="titlePage">
       <h2>Mis Citas</h2>
-      <form method="post" action="citasCliente.php" class="formPerfil">
+      <form method="post" action="citasCliente.php" class="formPerfil2">
         <?php if (isset($_SESSION['success'])) : ?>
           <div class="error success" >
       	    <h3>
@@ -45,19 +45,19 @@ if (isset($_GET['logout'])) {
         </div>
         <table>
           <tbody>
-            <tr><td>ID Cita</td><td>Fecha Cita</td><td>Hora Cita</td><td>Nombre Trabajador</td></tr>
+            <tr><td>ID Cita</td><td>Fecha Cita</td><td>Hora Cita</td><td>Servicio</td><td>Peluquero</td></tr>
             <?php
-            $queryCitas = "SELECT * FROM cita";
+            $queryCitas = "SELECT cita.id_cita, cita.fecha_cita, cita.hora_cita, servicio.nombre_servicio, trabajador.nombre_trabajador FROM cita, servicio, trabajador WHERE cita.id_servicio=servicio.id_servicio AND cita.Trabajador_id_trabajador=trabajador.id_trabajador ORDER BY fecha_cita;";
             $resultsCitas = mysqli_query($_SESSION['db'],$queryCitas);
 
             while($datosCitas = mysqli_fetch_array($resultsCitas)){
-              echo '<tr><td><input type="text" name="idCliente['.$datosCitas[0].']" value="'.$datosCitas[0].'" disabled>
-              </td><td><input type="text" name="nombreCliente['.$datosCitas[0].']" pattern="^[a-zA-Z\s]+$" title="Nombre incorrecto" value="'.$datosCitas[2].'">
-              </td><td><input type="email" name="emailCliente['.$datosCitas[0].']"  title="Email incorrecto" value="'.$datosCitas[4].'">
-              </td><td><input type="text" name="dniCliente['.$datosCitas[0].']"  pattern="^\d{8}[A-Z]$" title="DNI incorrecto" value="'.$datosCitas[1].'">
-              </td><td><input type="tel" name="tlfnCliente['.$datosCitas[0].']"  pattern="^[6-9][0-9]{8}$" title="Teléfono incorrecto" value="'.$datosCitas[3].'">
+              $fechaCita = new DateTime($datosCitas[1]);
+              echo '<tr><td><input type="text" name="idCita['.$datosCitas[0].']" value="'.$datosCitas[0].'" disabled>
+              </td><td><input type="text" name="fechaCita['.$datosCitas[0].']" value="'.date_format($fechaCita,'d-m-Y').'" disabled>
+              </td><td><input type="text" name="horaCita['.$datosCitas[0].']" value="'.$datosCitas[2].'" disabled>
+              </td><td><input type="text" name="nombreServicio['.$datosCitas[0].']" value="'.$datosCitas[3].'" disabled>
+              </td><td><input type="text" name="nombreTrabajador['.$datosCitas[0].']" value="'.$datosCitas[4].'" disabled>
               <td align=center> <input type=checkbox id="check" name="borra['.$datosCitas[0].']" value="Si"></td></tr>';
-              /*</td><td><input type="password" name="passwordCliente['.$datosClientes[0].']"></td>*/
             }
               ?>
 
