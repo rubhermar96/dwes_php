@@ -45,8 +45,8 @@ if (isset($_GET['logout'])) {
         <table>
           <tbody>
             <tr><td>Usuario</td><td><input type="text" name="usernameTrabajador" value="<?php echo $_SESSION['username']?>" disabled></td></tr>
-            <tr><td>Nombre</td><td><input type="text" name="nombreTrabajador" value="<?php echo $_SESSION['nombreTrabajador']?>" pattern="^[a-zA-Z\s]+$" title="Nombre incorrecto"></td></tr>
-            <tr><td>Apellidos</td><td><input type="text" name="apellidosTrabajador" value="<?php echo $_SESSION['apellidosTrabajador']?>" pattern="^[a-zA-Z\s]+$" title="Apellidos incorrectos"></td></tr>
+            <tr><td>Nombre</td><td><input type="text" name="nombreTrabajador" value="<?php echo $_SESSION['nombreTrabajador']?>" pattern="^[a-zA-Z\s ñáéíóú]+$" title="Nombre incorrecto"></td></tr>
+            <tr><td>Apellidos</td><td><input type="text" name="apellidosTrabajador" value="<?php echo $_SESSION['apellidosTrabajador']?>" pattern="^[a-zA-Z\s ñáéíóú]+$" title="Apellidos incorrectos"></td></tr>
             <tr><td>Nueva Contraseña</td><td><input type="password" name="passwordTrabajador"></td></tr>
           </tbody>
         </table>

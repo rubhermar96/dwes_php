@@ -27,11 +27,11 @@
   		</div>
 		<div class="input-group">
   	  		<label>Nombre</label>
-  	  		<input type="text" name="nombreTrabajador" required pattern="^[a-zA-Z\s]+$" title="Nombre incorrecto">
+  	  		<input type="text" name="nombreTrabajador" required pattern="^[a-zA-Z\s ñáéíóú]+$" title="Nombre incorrecto">
   		</div>
 		  <div class="input-group">
   	  		<label>Apellidos</label>
-  	  		<input type="text" name="apellidosTrabajador" required pattern="^[a-zA-Z\s]+$" title="Apellidos incorrectos">
+  	  		<input type="text" name="apellidosTrabajador" required pattern="^[a-zA-Z\s ñáéíóú]+$" title="Apellidos incorrectos">
   		</div>
   		<div class="input-group">
   	  		<label>Password</label>

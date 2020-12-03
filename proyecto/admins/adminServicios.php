@@ -50,7 +50,7 @@ if (isset($_GET['logout'])) {
         </div>
         <div class="input-group">
   	  		<label>Precio Servicio</label>
-  	  		<input type="text" name="costeServicio" required title="Precio incorrecto">
+  	  		<input type="text" name="costeServicio" required title="4 Dígitos con 2 Decimales" pattern="^\d{1,2}(\.\d{1})?\d{0,1}$">
         </div>
         <div class="input-group">
           <label>Tipo</label>
@@ -78,9 +78,9 @@ if (isset($_GET['logout'])) {
 
             while($datosServicio = mysqli_fetch_array($resultsServicio)){
               echo '<tr><td><input type="text" name="idServicio['.$datosServicio[0].']" value="'.$datosServicio[0].'" disabled>
-              </td><td><input type="text" name="nombreServicio['.$datosServicio[0].']" value="'.$datosServicio[1].'">
-              </td><td><input type="text" name="costeServicio['.$datosServicio[0].']" value="'.$datosServicio[2].'">
-              </td><td><input type="text" name="tipoServicio['.$datosServicio[0].']"  pattern="^[a-zA-Z\s]+$" title="Apellidos incorrectos" value="'.$datosServicio[3].'">
+              </td><td><input type="text" name="nombreServicio['.$datosServicio[0].']" value="'.$datosServicio[1].'" disabled>
+              </td><td><input type="text" name="costeServicio['.$datosServicio[0].']" value="'.$datosServicio[2].'" disabled>
+              </td><td><input type="text" name="tipoServicio['.$datosServicio[0].']" value="'.$datosServicio[3].'" disabled>
               <td align=center> <input type=checkbox id="check" name="borra['.$datosServicio[0].']" value="Si"></td></tr>';
             }
               ?>

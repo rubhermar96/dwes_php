@@ -64,7 +64,9 @@ if (isset($_GET['logout'])) {
             $queryTrabajador = "SELECT id_trabajador, nombre_trabajador, apellidos_trabajador FROM trabajador";
             $resultsTrabajador = mysqli_query($_SESSION['db'],$queryTrabajador);
             while($datosTrabajador = mysqli_fetch_array($resultsTrabajador)){
+              if($datosTrabajador[0]!= 1){
               echo '<option value="'.$datosTrabajador[0].'">'.$datosTrabajador[1].' '.$datosTrabajador[2].'</option>';
+              }
             }
             ?>
           </select>

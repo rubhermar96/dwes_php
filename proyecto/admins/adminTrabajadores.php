@@ -55,11 +55,13 @@ if (isset($_GET['logout'])) {
             $resultsTrabajador = mysqli_query($_SESSION['db'],$queryTrabajador);
 
             while($datosTrabajador = mysqli_fetch_array($resultsTrabajador)){
+              if($datosTrabajador[0]!=1){
               echo '<tr><td><input type="text" name="idTrabajador['.$datosTrabajador[0].']" value="'.$datosTrabajador[0].'" disabled>
-              </td><td><input type="text" name="usernameTrabajador['.$datosTrabajador[0].']" value="'.$datosTrabajador[2].'">
-              </td><td><input type="text" name="nombreTrabajador['.$datosTrabajador[0].']" pattern="^[a-zA-Z\s]+$" title="Nombre incorrecto" value="'.$datosTrabajador[1].'">
-              </td><td><input type="text" name="apellidosTrabajador['.$datosTrabajador[0].']"  pattern="^[a-zA-Z\s]+$" title="Apellidos incorrectos" value="'.$datosTrabajador[4].'">
+              </td><td><input type="text" name="usernameTrabajador['.$datosTrabajador[0].']" value="'.$datosTrabajador[2].'" disabled>
+              </td><td><input type="text" name="nombreTrabajador['.$datosTrabajador[0].']" value="'.$datosTrabajador[1].'" disabled>
+              </td><td><input type="text" name="apellidosTrabajador['.$datosTrabajador[0].']" value="'.$datosTrabajador[4].'" disabled>
               <td align=center> <input type=checkbox id="check" name="borra['.$datosTrabajador[0].']" value="Si"></td></tr>';
+              }
             }
             /*</td><td><input type="password" name="passwordTrabajador['.$datosTrabajador[0].']"></td>*/
               ?>

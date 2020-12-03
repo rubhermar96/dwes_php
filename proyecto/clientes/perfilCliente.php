@@ -43,8 +43,8 @@ if (isset($_GET['logout'])) {
         <table>
           <tbody>
             <tr><td>Usuario</td><td><input type="text" name="username" value="<?php echo $_SESSION['username']?>" disabled></td></tr>
-            <tr><td>Nombre</td><td><input type="text" name="nombreCliente" value="<?php echo $_SESSION['nombreCliente']?>" pattern="^[a-zA-Z\s]+$" title="Nombre incorrecto"></td></tr>
-            <tr><td>Apellidos</td><td><input type="text" name="apellidosCliente" value="<?php echo $_SESSION['apellidosCliente']?>" pattern="^[a-zA-Z\s]+$" title="Apellidos incorrectos"></td></tr>
+            <tr><td>Nombre</td><td><input type="text" name="nombreCliente" value="<?php echo $_SESSION['nombreCliente']?>" pattern="^[a-zA-Z\s ñáéíóú]+$" title="Nombre incorrecto"></td></tr>
+            <tr><td>Apellidos</td><td><input type="text" name="apellidosCliente" value="<?php echo $_SESSION['apellidosCliente']?>" pattern="^[a-zA-Z\s ñáéíóú]+$" title="Apellidos incorrectos"></td></tr>
             <tr><td>Email</td><td><input type="email" name="emailCliente" value="<?php echo $_SESSION['emailCliente']?>" disabled></td></tr>
             <tr><td>DNI</td><td><input type="text" name="dniCliente" value="<?php echo $_SESSION['dniCliente']?>" pattern="^\d{8}[A-Z]$" title="DNI incorrecto"></td></tr>
             <tr><td>Teléfono</td><td><input type="tel" name="tlfnCliente" value="<?php echo $_SESSION['tlfnCliente']?>" pattern="^[6-9][0-9]{8}$" title="Teléfono incorrecto"></td></tr>

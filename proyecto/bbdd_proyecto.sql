@@ -20,7 +20,6 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `usuario_cliente` VARCHAR(45) NOT NULL,
   `apellidos_cliente` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id_cliente`),
-  UNIQUE INDEX `dni_cliente_UNIQUE` (`dni_cliente` ASC) ,
   UNIQUE INDEX `email_cliente_UNIQUE` (`email_cliente` ASC) ,
   UNIQUE INDEX `usuario_cliente_UNIQUE` (`usuario_cliente` ASC))
 ENGINE = InnoDB;

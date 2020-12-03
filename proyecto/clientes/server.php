@@ -132,12 +132,27 @@ if (isset($_POST['reg_cita'])) {
   $idTrabajador = mysqli_real_escape_string($db, $_POST['idTrabajador']);
   $horaCita = mysqli_real_escape_string($db, $_POST['horaCita']);
 
+  //COMPROBAR QUE NO SE PUEDA PEDIR CITA SI EL MISMO TRABAJADOR TIENE
+  //YA UNA CITA ASIGNADA A LA MISMA FECHA Y HORA
+  $cita_check_query = "SELECT * FROM cita WHERE fecha_cita='$fechaCita' AND hora_cita='$horaCita' AND Trabajador_id_trabajador='$idTrabajador' LIMIT 1";
+  $result = mysqli_query($db, $cita_check_query);
+  $cita = mysqli_fetch_assoc($result);
   
+  if ($cita) {
+    $fecha = new DateTime($cita['fecha_cita']);
+    if ((date_format($fecha,'Y-m-d') === $fechaCita)&($cita['hora_cita']===$horaCita)&($cita['Trabajador_id_trabajador']===$idTrabajador)) {
+      array_push($errors, "No hay cita disponible. Por favor, elija otra opción");
+    }
+  }
+
+  //REGISTRO DEL CLIENTE
+  if (count($errors) == 0) {
   	$query = "INSERT INTO cita (fecha_cita, hora_cita, id_cliente, id_servicio, Trabajador_id_trabajador) 
                 VALUES ('$fechaCita','$horaCita','$idCliente','$idServicio','$idTrabajador');";
   	mysqli_query($db, $query);
     //header('location: citasCliente.php');
     $_SESSION['success'] = "Cita Registrada";
+}
 }
 if(isset($_POST['del_cita_Cli'])){
   foreach($_POST['borra'] as $indice=>$valor){

@@ -26,21 +26,21 @@
                     <img src="img/hombre.jpg" alt="Corte Hombre">
                 </div>
                 <h2>Corte Hombre</h2>
-                <h2>xx,xx€</h2>
+                <h2>12,99€</h2>
             </div>
             <div class="columnas" id="columna2">
                 <div class="imgPersonas">
                     <img src="img/mujer.png" alt="Corte Mujer">
                 </div>
                 <h2>Corte Mujer</h2>
-                <h2>xx,xx€</h2>
+                <h2>21,99€</h2>
             </div>
             <div class="columnas" id="columna3">
                 <div class="imgPersonas">
                     <img src="img/niña.png" alt="Corte Niño/a">
                 </div>
                 <h2>Corte Niño/a</h2>
-                <h2>xx,xx€</h2>
+                <h2>9,99€</h2>
             </div>
         </div>
         <div class="acceso">
